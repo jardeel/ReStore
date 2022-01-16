@@ -12,6 +12,7 @@ import ContactPage from '../../features/contact/ContactPage';
 import ServerError from '../errors/ServerError';
 import NotFound from '../errors/NotFound';
 import BasketPage from '../../features/basket/BasketPage';
+import CheckoutPage from '../../features/checkout/CheckoutPage';
 import Header from './Header';
 import { useStoreContext } from '../context/StoreContext';
 import { getCookie } from '../util/util';
@@ -66,6 +67,7 @@ function App() {
           <Route path="/contact" component={ContactPage}/>
           <Route path="/server-error" component={ServerError}/>
           <Route path="/basket" component={BasketPage}/>
+          <Route path="/checkout" component={CheckoutPage}/>
           <Route component={NotFound}/>
         </Switch>
       </Container>

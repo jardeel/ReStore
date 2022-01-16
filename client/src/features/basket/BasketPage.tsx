@@ -10,9 +10,11 @@ import {
   Typography,
   Grid,
   Box,
+  Button
 } from "@mui/material";
 import { Add, Delete, Remove } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
+import { Link } from 'react-router-dom';
 
 import agent from '../../app/api/agent';
 import { useStoreContext } from '../../app/context/StoreContext';
@@ -32,6 +34,7 @@ export default function BasketPage(){
       .catch(error => console.log(error))
       .finally(() => setStatus({loading: false, name: ''}))
   }
+  
 
   function handleRemoveItem(productId: number, quantity = 1, name: string){
     setStatus({ loading: true, name});
@@ -106,6 +109,15 @@ export default function BasketPage(){
         <Grid item xs={6} />
         <Grid item xs={6} >
           <BasketSummary />
+          <Button
+            component={Link}
+            to="/checkout"
+            variant='contained'
+            size='large'
+            fullWidth
+          >
+            Checkout
+          </Button>
         </Grid>
       </Grid>
     </>
